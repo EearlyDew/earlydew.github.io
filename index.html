@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <head>
     <!-- ... -->
-    <script src="https://cdn.jsdelivr.net/npm/console-ban@3.2.0/dist/console-ban.min.js"></script>
-    <script>
+    <!--script src="https://cdn.jsdelivr.net/npm/console-ban@3.2.0/dist/console-ban.min.js"></script-->
+<!--     <script>
       // default options
       ConsoleBan.init()
       // custom options
       ConsoleBan.init({
         redirect: 'https://earlydew.live/404.html'
       })
-    </script>
+    </script> -->
   </head>
 <head>
     <meta charset="UTF-8">
@@ -38,7 +38,7 @@
                 width: fit-content;
                 margin-left: auto;
                 margin-right: auto;
-                margin-bottom: 10px;
+                margin-bottom: 1px;
             }
     
             .flodiv1 {
@@ -53,6 +53,9 @@
             body::-webkit-scrollbar {
                 display: none;
             }
+
+
+      
         </style>
 </head>
 <body>
@@ -104,7 +107,7 @@
                     // entire view has been rendered
                     this.dp = new DPlayer({
                         container: document.getElementById('dplayer'),
-                        live: false,
+                        live: true,
                         autoplay: true,
                         volume: 1,
                         video: {
@@ -129,6 +132,7 @@
                     this.dp.on('contextmenu_show', () => {
                         this.visibility = 'visibility: visible;'
                     });
+                    this.dp.fullScreen.request('web');
                     this.dp.on('contextmenu_hide', () => {
                         this.visibility = 'visibility: hidden;'
                     });
